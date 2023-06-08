@@ -25,15 +25,15 @@ export default function ConfirmPassword() {
 
     return (
         <GuestLayout>
-            <Head title="Confirm Password" />
+            <Head title="Bevestig Wachtwoord" />
 
             <div className="mb-4 text-sm text-gray-600">
-                This is a secure area of the application. Please confirm your password before continuing.
+                Dit is een beveiligd gedeelte van de applicatie. Bevestig je wachtwoord voordat je doorgaat.
             </div>
 
             <form onSubmit={submit}>
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlFor="password" value="Wachtwoord" />
 
                     <TextInput
                         id="password"
@@ -50,7 +50,7 @@ export default function ConfirmPassword() {
 
                 <div className="flex items-center justify-end mt-4">
                     <PrimaryButton className="ml-4" disabled={processing}>
-                        Confirm
+                        Bevestig
                     </PrimaryButton>
                 </div>
             </form>
