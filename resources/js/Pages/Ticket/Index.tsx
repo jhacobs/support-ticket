@@ -2,8 +2,10 @@ import TicketListItem from "@/Components/Ticket/ListItem";
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import {PageProps} from "@/interfaces/page-props";
 import {Head} from "@inertiajs/react";
+import {Ticket} from "@/interfaces/ticket";
+import {PaginationResponse} from "@/interfaces/pagination-response";
 
-export default function TicketIndex({auth}: PageProps) {
+export default function TicketIndex({auth, tickets}: PageProps<{ tickets: PaginationResponse<Ticket> }>) {
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -13,8 +15,9 @@ export default function TicketIndex({auth}: PageProps) {
 
             <div>
                 <ul className="divide-y divide-gray-100 px-8">
-                    <TicketListItem></TicketListItem>
-                    <TicketListItem></TicketListItem>
+                    {tickets.data.map((ticket) => (
+                        <TicketListItem ticket={ticket}></TicketListItem>
+                    ))}
                 </ul>
             </div>
         </AuthenticatedLayout>

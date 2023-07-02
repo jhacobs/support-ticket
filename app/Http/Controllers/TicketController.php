@@ -11,7 +11,9 @@ class TicketController extends Controller
 {
     public function index(): Response
     {
-        $tickets = Ticket::open()->paginate();
+        $tickets = Ticket::open()
+            ->with('creator')
+            ->paginate();
 
         return Inertia::render('Ticket/Index', [
             'tickets' => $tickets
