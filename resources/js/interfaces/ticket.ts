@@ -1,6 +1,7 @@
 import {User} from "@/interfaces/user";
 
 export interface Ticket {
+    id: number;
     title: string;
     message: string;
     creator: User;

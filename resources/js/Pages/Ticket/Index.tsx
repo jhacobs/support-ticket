@@ -4,6 +4,7 @@ import {PageProps} from "@/interfaces/page-props";
 import {Head} from "@inertiajs/react";
 import {Ticket} from "@/interfaces/ticket";
 import {PaginationResponse} from "@/interfaces/pagination-response";
+import Pagination from "@/Components/Pagination";
 
 export default function TicketIndex({auth, tickets}: PageProps<{ tickets: PaginationResponse<Ticket> }>) {
     return (
@@ -16,10 +17,12 @@ export default function TicketIndex({auth, tickets}: PageProps<{ tickets: Pagina
             <div>
                 <ul className="divide-y divide-gray-100 px-8">
                     {tickets.data.map((ticket) => (
-                        <TicketListItem ticket={ticket}></TicketListItem>
+                        <TicketListItem key={ticket.id} ticket={ticket}></TicketListItem>
                     ))}
                 </ul>
             </div>
+
+            <Pagination response={tickets}></Pagination>
         </AuthenticatedLayout>
     );
 }
