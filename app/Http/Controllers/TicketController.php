@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ticket;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -16,7 +15,7 @@ class TicketController extends Controller
             ->paginate();
 
         return Inertia::render('Ticket/Index', [
-            'tickets' => $tickets
+            'tickets' => $tickets,
         ]);
     }
 }

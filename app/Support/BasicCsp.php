@@ -3,7 +3,6 @@
 namespace App\Support;
 
 use Spatie\Csp\Directive;
-use Spatie\Csp\Keyword;
 use Spatie\Csp\Policies\Basic;
 
 class BasicCsp extends Basic

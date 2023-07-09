@@ -18,7 +18,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        RemoveHeaders::class
+        RemoveHeaders::class,
     ];
 
     protected $middlewareGroups = [
@@ -33,7 +33,7 @@ class Kernel extends HttpKernel
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
             ContentTypeOptions::class,
             ReferrerPolicy::class,
-            AddCspHeaders::class
+            AddCspHeaders::class,
         ],
 
         'api' => [

@@ -17,7 +17,7 @@ class TicketFactory extends Factory
             'title' => $this->faker->word,
             'message' => $this->faker->text,
             'status' => TicketStatus::Open,
-            'creator_id' => User::factory()
+            'creator_id' => User::factory(),
         ];
     }
 }

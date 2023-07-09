@@ -17,11 +17,11 @@ class Ticket extends Model
         'message',
         'creator_id',
         'agent_id',
-        'status'
+        'status',
     ];
 
     protected $casts = [
-        'status' => TicketStatus::class
+        'status' => TicketStatus::class,
     ];
 
     public function scopeOpen(Builder $query): Builder

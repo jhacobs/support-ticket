@@ -12,7 +12,7 @@ class RemoveHeaders
     {
         $headers = [
             'Server',
-            'X-Powered-By'
+            'X-Powered-By',
         ];
 
         /** @var Response $response */
